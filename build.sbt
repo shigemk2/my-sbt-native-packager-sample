@@ -10,3 +10,10 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 // Uncomment to use Akka
 //libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
 
+enablePlugins(JavaAppPackaging)
+
+maintainer in Docker := "Duke"
+
+dockerBaseImage in Docker := "dockerfile/java"
+
+dockerExposedPorts in Docker := Seq(8080, 8080)
